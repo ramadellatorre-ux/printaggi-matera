@@ -2,13 +2,13 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Matera Premium · Printaggi | El mate, a tu manera</title>
   <meta name="description" content="Matera Premium de Printaggi: termo al centro, manija regulable, yerbero con tapa y base con goma. Todo tu equipo matero ordenado para el parque, la playa o la ruta.">
   <meta property="og:title" content="Matera Premium · Printaggi">
   <meta property="og:description" content="El mate, a tu manera. Todo organizado, listo para salir.">
   <meta property="og:image" content="assets/lifestyle-parque.jpg">
-  <meta name="theme-color" content="#1E2638">
+  <meta name="theme-color" content="#F4F5F8">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..900&family=DM+Sans:opsz,wght@9..40,400..700&display=swap" rel="stylesheet">
@@ -35,14 +35,12 @@
       <div class="blob" aria-hidden="true"></div>
       <div class="hero-copy">
         <p class="eyebrow reveal">Matera Premium</p>
-        <h1 class="hero-title" aria-label="El mate, a tu manera.">
-          <span class="w"><span>EL</span></span>
-          <span class="w"><span>MATE,</span></span><br>
-          <span class="w"><span>A</span></span>
-          <span class="w"><span>TU</span></span>
-          <span class="w"><span>MANERA.</span></span>
+        <h1 class="title lines is-in" aria-label="El mate, a tu manera.">
+          <span class="ln fit" style="--n:10;--fill:.82"><span>EL MATE,</span></span>
+          <span class="ln sm"><span>a tu</span></span>
+          <span class="ln fit peri" style="--n:7"><span>MANERA.</span></span>
         </h1>
-        <p class="hero-sub reveal">Todo organizado.<br>Listo para salir.</p>
+        <p class="hero-sub reveal">Todo <strong>organizado</strong>.<br>Listo para <strong>salir</strong>.</p>
         <div class="hero-ctas reveal">
           <a class="btn btn-wa" data-wa="general" href="#">
             <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg>
@@ -50,7 +48,7 @@
           </a>
           <a class="btn btn-ghost" href="#producto">Conocela</a>
         </div>
-        <p class="hero-price reveal"><span data-price></span></p>
+        <p class="hero-price reveal" data-price></p>
       </div>
 
       <div class="hero-visual">
@@ -60,9 +58,9 @@
         <span class="sticker" aria-hidden="true">PARQUE · PLAYA · RUTA</span>
         <svg class="spin-badge" viewBox="0 0 120 120" aria-hidden="true">
           <defs><path id="circ" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs>
-          <text><textPath href="#circ">MATERA PREMIUM · TODO EN SU LUGAR ·</textPath></text>
+          <text class="ring-text"><textPath href="#circ">MATERA PREMIUM · TODO EN SU LUGAR ·</textPath></text>
           <circle cx="60" cy="60" r="22"/>
-          <text x="60" y="66" text-anchor="middle" class="badge-mate">🧉</text>
+          <text x="60" y="67" text-anchor="middle" class="badge-mate">🧉</text>
         </svg>
       </div>
     </section>
@@ -70,8 +68,8 @@
     <!-- MARQUEE -->
     <div class="marquee" aria-hidden="true">
       <div class="marquee-track">
-        <span>PARQUE</span><i>✦</i><span>PLAYA</span><i>✦</i><span>RUTA</span><i>✦</i><span>TODO EN SU LUGAR</span><i>✦</i>
-        <span>PARQUE</span><i>✦</i><span>PLAYA</span><i>✦</i><span>RUTA</span><i>✦</i><span>TODO EN SU LUGAR</span><i>✦</i>
+        <span>PARQUE</span><i>✦</i><span class="out">PLAYA</span><i>✦</i><span>RUTA</span><i>✦</i><span class="out">TODO EN SU LUGAR</span><i>✦</i>
+        <span>PARQUE</span><i>✦</i><span class="out">PLAYA</span><i>✦</i><span>RUTA</span><i>✦</i><span class="out">TODO EN SU LUGAR</span><i>✦</i>
       </div>
     </div>
 
@@ -79,8 +77,11 @@
     <section class="section anatomy" id="producto">
       <div class="anatomy-copy">
         <p class="eyebrow reveal">Tu equipo matero</p>
-        <h2 class="h2 reveal">TODO EN<br>SU LUGAR.</h2>
-        <p class="lead reveal">Tu equipo matero, cómodo y ordenado para acompañarte en cada salida. Tocá los puntos para recorrerla.</p>
+        <h2 class="title lines" aria-label="Todo en su lugar.">
+          <span class="ln sm"><span>todo en</span></span>
+          <span class="ln fit" style="--n:6"><span>SU <em class="hl">LUGAR.</em></span></span>
+        </h2>
+        <p class="lead reveal">Tu equipo matero, <strong>cómodo y ordenado</strong> para acompañarte en cada salida.</p>
         <ul class="pills reveal">
           <li>Termo al centro</li>
           <li>Manija regulable</li>
@@ -88,98 +89,125 @@
         </ul>
       </div>
 
-      <div class="anatomy-visual reveal">
-        <img src="assets/producto-estudio.jpg" alt="Matera Premium con termo al centro, yerbero a la izquierda y mate a la derecha" loading="lazy">
-        <button class="hotspot" style="--x:50%;--y:7%" data-tip="Manija regulable: subila o bajala según tu termo." aria-label="Manija regulable"></button>
-        <button class="hotspot" style="--x:52%;--y:38%" data-tip="Termo al centro: firme y siempre a mano." aria-label="Termo al centro"></button>
-        <button class="hotspot" style="--x:21%;--y:62%" data-tip="Yerbero con tapa y diseño texturado." aria-label="Yerbero"></button>
-        <button class="hotspot" style="--x:82%;--y:62%" data-tip="Lugar propio para el mate." aria-label="Compartimento del mate"></button>
-        <button class="hotspot" style="--x:62%;--y:91%" data-tip="Base con zona de goma para más estabilidad." aria-label="Base con goma"></button>
-        <div class="tip" role="status" aria-live="polite"></div>
+      <div class="anatomy-wrap reveal">
+        <div class="anatomy-visual">
+          <img src="assets/producto-estudio.jpg" alt="Matera Premium con termo al centro, yerbero a la izquierda y mate a la derecha" loading="lazy">
+          <button class="hotspot" style="--x:50%;--y:7%" data-tip="<b>Manija regulable.</b> Subila o bajala según tu termo." aria-label="Manija regulable"></button>
+          <button class="hotspot" style="--x:52%;--y:38%" data-tip="<b>Termo al centro.</b> Firme y siempre a mano." aria-label="Termo al centro"></button>
+          <button class="hotspot" style="--x:21%;--y:62%" data-tip="<b>Yerbero</b> con tapa y diseño texturado." aria-label="Yerbero"></button>
+          <button class="hotspot" style="--x:82%;--y:62%" data-tip="<b>Lugar propio</b> para el mate." aria-label="Compartimento del mate"></button>
+          <button class="hotspot" style="--x:62%;--y:91%" data-tip="<b>Base con goma</b> para más estabilidad." aria-label="Base con goma"></button>
+        </div>
+        <p class="tip" role="status" aria-live="polite"><span class="tip-dot"></span><span class="tip-text">Tocá los puntos para recorrerla</span></p>
       </div>
     </section>
 
-    <!-- DETALLES (scroll story) -->
+    <!-- DETALLES: tarjetas que se apilan -->
     <section class="section details" id="detalles">
       <div class="details-head">
         <p class="eyebrow reveal">Diseño funcional</p>
-        <h2 class="h2 reveal">DETALLES QUE<br>SE NOTAN.</h2>
+        <h2 class="title lines" aria-label="Detalles que se notan.">
+          <span class="ln sm"><span>detalles que</span></span>
+          <span class="ln fit" style="--n:9"><span>SE <em class="hl">NOTAN.</em></span></span>
+        </h2>
         <p class="lead reveal">Pensada para acompañar tu ritmo.</p>
       </div>
 
-      <div class="story">
-        <div class="stage" aria-hidden="true">
-          <img class="is-active" src="assets/detalle-manija.jpg" alt="" loading="lazy">
-          <img src="assets/base-goma.jpg" alt="" loading="lazy">
-          <img src="assets/yerbero.jpg" alt="" loading="lazy">
-          <img src="assets/bolsillo-celu.jpg" alt="" loading="lazy">
-          <div class="stage-dots"><span class="is-active"></span><span></span><span></span><span></span></div>
-        </div>
+      <div class="stack">
+        <article class="scard" style="--i:0">
+          <div class="scard-img"><img src="assets/detalle-manija.jpg" alt="Detalle de los agujeros de traba de la manija" loading="lazy"></div>
+          <div class="scard-body">
+            <span class="scard-num">01 <i>/ 04</i></span>
+            <h3 class="title" aria-label="Ajustá. Llevá.">
+              <span class="ln fit out" style="--n:7"><span>AJUSTÁ.</span></span>
+              <span class="ln fit" style="--n:7"><span>LLEVÁ.</span></span>
+            </h3>
+            <p>La manija <strong>cambia de altura</strong> para adaptarse a distintos termos.</p>
+          </div>
+        </article>
 
-        <div class="steps">
-          <article class="step is-active" data-step="0">
-            <img class="step-img" src="assets/detalle-manija.jpg" alt="Detalle de los agujeros de traba de la manija" loading="lazy">
-            <span class="step-num">01</span>
-            <h3>AJUSTÁ.<br>LLEVÁ.</h3>
-            <p>La manija cambia de altura para adaptarse a distintos termos. Se traba con un botón y listo, a caminar.</p>
-          </article>
-          <article class="step" data-step="1">
-            <img class="step-img" src="assets/base-goma.jpg" alt="Base de la matera con zona de goma antideslizante" loading="lazy">
-            <span class="step-num">02</span>
-            <h3>MÁS AGARRE.<br>MÁS CONFORT.</h3>
-            <p>La base incorpora una zona de goma que ayuda a mejorar el apoyo y la estabilidad, en la mesa, el pasto o el piso del auto.</p>
-          </article>
-          <article class="step" data-step="2">
-            <img class="step-img" src="assets/yerbero.jpg" alt="Yerbero gris con tapa y diseño texturado" loading="lazy">
-            <span class="step-num">03</span>
-            <h3>YERBA<br>A MANO.</h3>
-            <p>Yerbero con tapa y diseño texturado: un espacio propio para llevar la yerba ordenada.</p>
-          </article>
-          <!-- EDITAR: confirmar que el bolsillo para celular viene en el modelo que se vende -->
-          <article class="step" data-step="3">
-            <img class="step-img" src="assets/bolsillo-celu.jpg" alt="Bolsillo trasero de la matera con un celular" loading="lazy">
-            <span class="step-num">04</span>
-            <h3>EL CELU,<br>TAMBIÉN.</h3>
-            <p>Un bolsillo atrás para que el teléfono viaje parado y no ande dando vueltas.</p>
-          </article>
-        </div>
+        <article class="scard" style="--i:1">
+          <div class="scard-img"><img src="assets/base-goma.jpg" alt="Base de la matera con zona de goma antideslizante" loading="lazy"></div>
+          <div class="scard-body">
+            <span class="scard-num">02 <i>/ 04</i></span>
+            <h3 class="title" aria-label="Más agarre. Más confort.">
+              <span class="ln sm"><span>más</span></span>
+              <span class="ln fit" style="--n:7"><span>AGARRE.</span></span>
+              <span class="ln sm"><span>más <em class="hl">confort.</em></span></span>
+            </h3>
+            <p>La base incorpora una <strong>zona de goma</strong> que ayuda a mejorar el apoyo y la estabilidad.</p>
+          </div>
+        </article>
+
+        <article class="scard" style="--i:2">
+          <div class="scard-img"><img src="assets/yerbero.jpg" alt="Yerbero gris con tapa y diseño texturado" loading="lazy"></div>
+          <div class="scard-body">
+            <span class="scard-num">03 <i>/ 04</i></span>
+            <h3 class="title" aria-label="Yerba a mano.">
+              <span class="ln fit" style="--n:5"><span>YERBA</span></span>
+              <span class="ln sm"><span>siempre <em class="hl">a mano.</em></span></span>
+            </h3>
+            <p><strong>Yerbero con tapa</strong> y diseño texturado: un espacio propio para llevar la yerba ordenada.</p>
+          </div>
+        </article>
+
+        <!-- EDITAR: confirmar que el bolsillo para celular viene en el modelo que se vende -->
+        <article class="scard" style="--i:3">
+          <div class="scard-img"><img src="assets/bolsillo-celu.jpg" alt="Bolsillo trasero de la matera con un celular" loading="lazy"></div>
+          <div class="scard-body">
+            <span class="scard-num">04 <i>/ 04</i></span>
+            <h3 class="title" aria-label="El celu, también.">
+              <span class="ln sm"><span>el celu,</span></span>
+              <span class="ln fit" style="--n:8"><span>TAMBIÉN.</span></span>
+            </h3>
+            <p>Un <strong>bolsillo atrás</strong> para que el teléfono viaje parado y no ande dando vueltas.</p>
+          </div>
+        </article>
       </div>
     </section>
 
     <!-- LIFESTYLE -->
     <section class="section places">
       <div class="places-head">
-        <h2 class="h2 reveal">DONDE<br>LA LLEVES.</h2>
-        <p class="lead reveal">Del parque a la ruta, tu ronda de mates viaja armada.</p>
+        <h2 class="title lines" aria-label="Donde la lleves.">
+          <span class="ln sm"><span>donde la</span></span>
+          <span class="ln fit" style="--n:7"><span>LLEVES.</span></span>
+        </h2>
+        <p class="lead reveal">Del parque a la ruta, tu ronda de mates <strong>viaja armada</strong>.</p>
       </div>
-      <div class="cards">
-        <figure class="card reveal" data-tilt>
+      <div class="cards" id="cards">
+        <figure class="card" data-tilt>
           <img src="assets/lifestyle-parque.jpg" alt="Matera en el pasto de un parque" loading="lazy">
           <figcaption><span>01</span>Al parque</figcaption>
         </figure>
-        <figure class="card reveal" data-tilt>
+        <figure class="card" data-tilt>
           <img src="assets/lifestyle-auto.jpg" alt="Matera apoyada en el piso de un auto" loading="lazy">
           <figcaption><span>02</span>En la ruta</figcaption>
         </figure>
-        <figure class="card reveal" data-tilt>
+        <figure class="card" data-tilt>
           <img src="assets/lifestyle-mano.jpg" alt="Persona llevando la matera por la manija" loading="lazy">
           <figcaption><span>03</span>De la mano</figcaption>
         </figure>
       </div>
+      <div class="cards-dots" aria-hidden="true"><span class="is-active"></span><span></span><span></span></div>
     </section>
 
     <!-- MATERIAL -->
     <section class="section material">
       <div class="material-card reveal">
-        <div class="material-yerbero">
+        <div class="material-yerbero" role="button" tabindex="0" aria-label="Abrir y cerrar el yerbero">
           <img class="y-closed" src="assets/yerbero.jpg" alt="Yerbero cerrado" loading="lazy">
           <img class="y-open" src="assets/yerbero-abierto.jpg" alt="Yerbero abierto mostrando la tapa" loading="lazy">
-          <span class="hint">Pasá el mouse · tocá</span>
+          <span class="hint">Tocá para abrir</span>
         </div>
         <div class="material-copy">
           <span class="pill-lime">MATERIAL PETG</span>
-          <h2 class="h3">Hecha para el uso de todos los días.</h2>
-          <p>Elegimos PETG por su resistencia y mejor desempeño para el uso cotidiano al aire libre.</p>
+          <h2 class="title" aria-label="Hecha para todos los días.">
+            <span class="ln sm"><span>hecha para</span></span>
+            <span class="ln fit" style="--n:8;--fill:.7"><span>TODOS</span></span>
+            <span class="ln sm"><span>los <em class="hl">días.</em></span></span>
+          </h2>
+          <p>Elegido por su <strong>resistencia</strong> y mejor desempeño para el uso cotidiano al aire libre.</p>
           <p class="note">☀️ Evitá dejarla dentro de un auto cerrado bajo sol intenso.</p>
         </div>
       </div>
@@ -191,8 +219,11 @@
         <div class="brand-copy">
           <span class="plus" aria-hidden="true">+</span>
           <p class="eyebrow eyebrow-light">Regalos empresariales</p>
-          <h2 class="h2 h2-light">TU MARCA<br>TAMBIÉN PUEDE<br>ESTAR AHÍ.</h2>
-          <p>Personalizamos la Matera Premium con el logo de tu empresa. Un regalo que se usa todos los días y que no termina en un cajón.</p>
+          <h2 class="title lines light" aria-label="Tu marca también puede estar ahí.">
+            <span class="ln sm"><span>tu marca también puede</span></span>
+            <span class="ln fit lime" style="--n:10"><span>ESTAR AHÍ.</span></span>
+          </h2>
+          <p>Personalizamos la Matera Premium con el logo de tu empresa. Un regalo que <strong>se usa todos los días</strong> y no termina en un cajón.</p>
           <a class="btn btn-lime" data-wa="empresas" href="#">Cotizar para mi empresa</a>
         </div>
         <div class="brand-visual">
@@ -205,11 +236,14 @@
     <!-- CÓMO COMPRAR -->
     <section class="section buy" id="comprar">
       <p class="eyebrow reveal">Simple y directo</p>
-      <h2 class="h2 reveal">CÓMO<br>COMPRAR.</h2>
+      <h2 class="title lines" aria-label="Cómo comprar.">
+        <span class="ln sm"><span>cómo</span></span>
+        <span class="ln fit" style="--n:8"><span>COMPRAR.</span></span>
+      </h2>
       <ol class="buy-steps">
-        <li class="reveal"><span>1</span><h3>Escribinos</h3><p>Tocá el botón y te llega un WhatsApp con el pedido armado.</p></li>
-        <li class="reveal"><span>2</span><h3>Elegí cómo pagar</h3><p>Transferencia o Mercado Pago (tarjetas y cuotas, según el plan vigente).</p></li>
-        <li class="reveal"><span>3</span><h3>Recibila</h3><p>Coordinamos envío o retiro y te pasamos el seguimiento.</p></li>
+        <li class="reveal"><span>1</span><div><h3>Escribinos</h3><p>Tocá el botón y te llega un WhatsApp con el pedido armado.</p></div></li>
+        <li class="reveal"><span>2</span><div><h3>Elegí cómo pagar</h3><p>Transferencia o Mercado Pago (tarjetas y cuotas, según el plan vigente).</p></div></li>
+        <li class="reveal"><span>3</span><div><h3>Recibila</h3><p>Coordinamos envío o retiro y te pasamos el seguimiento.</p></div></li>
       </ol>
       <div class="buy-cta reveal">
         <p class="buy-price" data-price></p>
@@ -225,7 +259,10 @@
 
     <!-- FAQ -->
     <section class="section faq">
-      <h2 class="h2 reveal">PREGUNTAS<br>FRECUENTES.</h2>
+      <h2 class="title lines" aria-label="Preguntas frecuentes.">
+        <span class="ln sm"><span>preguntas</span></span>
+        <span class="ln fit" style="--n:11"><span>FRECUENTES.</span></span>
+      </h2>
       <div class="faq-list">
         <details class="reveal">
           <summary>¿Me entra mi termo?</summary>
@@ -261,13 +298,25 @@
     </div>
   </footer>
 
-  <!-- WhatsApp flotante -->
+  <!-- Barra de compra (celular) -->
+  <div class="mbar" id="mbar">
+    <div class="mbar-info">
+      <strong>Matera Premium</strong>
+      <span data-price-short></span>
+    </div>
+    <a class="btn btn-wa" data-wa="general" href="#">
+      <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg>
+      Pedila
+    </a>
+  </div>
+
+  <!-- WhatsApp flotante (compu) -->
   <a class="wa-float" data-wa="general" href="#" aria-label="Escribinos por WhatsApp">
     <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg>
   </a>
 
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-    <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.02c-.24.68-1.42 1.31-1.95 1.36-.5.05-.97.23-3.27-.68-2.77-1.09-4.52-3.92-4.66-4.1-.13-.18-1.11-1.48-1.11-2.82s.7-2 .95-2.28c.25-.27.54-.34.72-.34h.52c.17 0 .39-.06.61.47.24.56.79 1.93.86 2.07.07.14.11.3.02.48-.09.18-.14.3-.27.46-.14.16-.29.36-.41.48-.14.14-.28.29-.12.56.16.27.71 1.17 1.52 1.9 1.05.93 1.93 1.22 2.2 1.36.27.14.43.11.59-.07.16-.18.68-.79.86-1.07.18-.27.36-.23.61-.14.25.09 1.59.75 1.86.89.27.14.45.2.52.32.06.11.06.67-.18 1.35z"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.050 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.910-4.45 9.910-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.02c-.24.68-1.42 1.31-1.950 1.36-.5.05-.97.23-3.27-.68-2.77-1.09-4.52-3.92-4.66-4.1-.13-.18-1.11-1.48-1.11-2.82s.7-2 .95-2.28c.25-.27.54-.34.72-.34h.52c.17 0 .39-.06.61.47.24.56.79 1.93.86 2.07.07.14.11.3.02.48-.09.18-.14.3-.27.46-.14.16-.29.36-.41.48-.14.14-.28.29-.12.56.16.27.71 1.17 1.52 1.9 1.05.93 1.93 1.22 2.2 1.36.27.14.43.11.59-.07.16-.18.68-.79.86-1.07.18-.27.36-.23.61-.14.25.09 1.59.75 1.86.89.27.14.45.2.52.32.06.11.06.67-.18 1.35z"/></symbol>
   </svg>
 
   <script src="script.js"></script>
