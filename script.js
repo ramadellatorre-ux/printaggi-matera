@@ -1,6 +1,6 @@
 /* ============ CONFIG — EDITAR ACÁ ============ */
 const CONFIG = {
-  whatsapp: "5490000000000",   // código de país + área + número, sin "+" ni espacios
+  whatsapp: "5491124030147",  // código de país + área + número, sin "+" ni espacios
   precio: "",                  // ej: "$ 45.000" — vacío muestra "Consultá el precio"
   mpLink: "",                  // link de pago de Mercado Pago — vacío oculta el botón
   mensajes: {
