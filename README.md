@@ -3,7 +3,8 @@
 ## Stack
 - HTML + CSS + JS puro, sin dependencias (solo Google Fonts)
 - Estética técnica oscura; el acento cambia por edición (Clásica: lavanda/lima · Boca: azul/oro)
-- Tipografías: Archivo, DM Sans y JetBrains Mono (etiquetas técnicas)
+- Tipografías: Bricolage Grotesque (títulos y botones), Instrument Serif itálica (palabras de acompañamiento) y DM Sans (texto)
+- Pensada primero para celular: carruseles deslizables, menú desplegable y barra de compra fija
 
 ## Configurar (todo en `script.js`, objeto `CONFIG`)
 - `whatsapp`: número con código de país, sin `+` (ej: `5491123456789`)

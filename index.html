@@ -11,23 +11,42 @@
   <meta name="theme-color" content="#0C0F14">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..900&family=DM+Sans:opsz,wght@9..40,400..700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=4">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=DM+Sans:opsz,wght@9..40,400..700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=5">
 </head>
 <body>
 
   <!-- NAV -->
   <header class="nav" id="nav">
-    <a href="#top" class="logo">PRINTAGGI</a>
+    <a href="#top" class="logo">Printaggi</a>
     <nav class="nav-links" aria-label="Principal">
+      <a href="#ediciones">Ediciones</a>
+      <a href="#anatomia">Anatomía</a>
+      <a href="#detalles">Detalles</a>
+      <a href="#ficha">Ficha</a>
+      <a href="#comprar">Comprar</a>
+    </nav>
+    <div class="nav-right">
+      <a class="btn btn-sm btn-acc" data-wa="ed" href="#">Pedila</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <!-- Menú (celu) -->
+  <div class="menu" id="menu" hidden>
+    <nav aria-label="Secciones">
       <a href="#ediciones"><i>01</i>Ediciones</a>
       <a href="#anatomia"><i>02</i>Anatomía</a>
       <a href="#detalles"><i>03</i>Detalles</a>
-      <a href="#ficha"><i>04</i>Ficha</a>
-      <a href="#comprar"><i>05</i>Comprar</a>
+      <a href="#ficha"><i>04</i>Ficha técnica</a>
+      <a href="#personaliza"><i>05</i>Personalizá</a>
+      <a href="#comprar"><i>06</i>Cómo comprar</a>
     </nav>
-    <a class="btn btn-sm btn-acc" data-wa="ed" href="#">Pedila</a>
-  </header>
+    <a class="btn btn-acc btn-lg" data-wa="ed" href="#">
+      <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg>
+      Pedir por WhatsApp
+    </a>
+  </div>
 
   <main id="top">
 
@@ -35,74 +54,70 @@
     <section class="hero">
       <div class="grid-bg" aria-hidden="true"></div>
 
-      <div class="hero-copy">
-        <p class="meta reveal"><span class="led"></span>MATERA PREMIUM <b>/</b> <span data-ed-name>EDICIÓN CLÁSICA</span></p>
+      <div class="hero-top">
+        <p class="meta reveal"><span class="led"></span>Matera Premium · <span data-ed-name>Edición Clásica</span></p>
         <h1 class="title lines is-in" aria-label="El mate, a tu manera.">
           <span class="ln fit" style="--n:10;--fill:.8"><span>EL MATE,</span></span>
           <span class="ln sm"><span>a tu</span></span>
           <span class="ln fit acc" style="--n:7"><span>MANERA.</span></span>
         </h1>
-        <p class="hero-sub reveal">Termo, mate y yerba <strong>en su lugar</strong>. Manija regulable, yerbero incluido y material <strong>resistente a UV</strong>.</p>
+      </div>
 
-        <div class="switch reveal" role="radiogroup" aria-label="Elegí la edición">
-          <button role="radio" data-set-ed="clasica" aria-checked="true">
-            <span class="sw-dots"><i style="--c:#A9BDF0"></i><i style="--c:#8C9099"></i></span>Clásica
-          </button>
-          <button role="radio" data-set-ed="boca" aria-checked="false">
-            <span class="sw-dots"><i style="--c:#2F62F0"></i><i style="--c:#FFD21F"></i></span>Boca<span class="sw-long">&nbsp;· La Mitad +1</span>
-          </button>
-          <span class="sw-pill" aria-hidden="true"></span>
-        </div>
-
-        <div class="hero-ctas reveal">
-          <a class="btn btn-acc" data-wa="ed" href="#">
-            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg>
-            Quiero la mía
-          </a>
-          <a class="btn btn-line" href="#ficha">Ficha técnica</a>
-        </div>
+      <div class="switch reveal" role="radiogroup" aria-label="Elegí la edición">
+        <button role="radio" data-set-ed="clasica" aria-checked="true">
+          <span class="sw-dots"><i style="--c:#A9BDF0"></i><i style="--c:#8C9099"></i></span>Clásica
+        </button>
+        <button role="radio" data-set-ed="boca" aria-checked="false">
+          <span class="sw-dots"><i style="--c:#2F62F0"></i><i style="--c:#FFD21F"></i></span>Boca<span class="sw-long">&nbsp;· La Mitad +1</span>
+        </button>
+        <span class="sw-pill" aria-hidden="true"></span>
       </div>
 
       <figure class="frame hero-frame" id="heroFrame">
         <img class="ed-img is-active" data-ed="clasica" src="assets/producto-estudio.jpg" alt="Matera Premium edición Clásica con termo, yerbero y mate" fetchpriority="high">
         <img class="ed-img" data-ed="boca" src="assets/boca-termo.jpg" alt="Matera Premium edición Boca, azul y amarilla, con la leyenda La Mitad +1">
         <span class="scan" aria-hidden="true"></span>
-        <span class="cross cross-x" aria-hidden="true"></span>
-        <span class="cross cross-y" aria-hidden="true"></span>
         <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
-        <figcaption class="frame-cap">
-          <span data-scramble>FIG.01 — VISTA FRONTAL</span>
-          <span class="coords" id="coords">X 0.500 · Y 0.500</span>
-        </figcaption>
         <ul class="chips" aria-label="Características destacadas">
           <li>Manija regulable</li>
           <li>Yerbero incluido</li>
-          <li>Resistente UV</li>
+          <li>Resistente a UV</li>
         </ul>
       </figure>
+
+      <div class="hero-bottom">
+        <p class="hero-sub reveal">Termo, mate y yerba <strong>en su lugar</strong>. Ordenada, firme y lista para salir.</p>
+        <div class="hero-ctas reveal">
+          <a class="btn btn-acc" data-wa="ed" href="#">
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg>
+            Quiero la mía
+          </a>
+          <a class="btn btn-line" href="#ediciones">Ver ediciones</a>
+        </div>
+      </div>
     </section>
 
     <!-- TICKER -->
     <div class="ticker" aria-hidden="true">
       <div class="ticker-track">
-        <span>PETG</span><i>+</i><span>RESISTENTE A UV</span><i>+</i><span>MANIJA REGULABLE</span><i>+</i><span>YERBERO DESPOLVILLADOR</span><i>+</i><span>BASE ANTIDESLIZANTE</span><i>+</i><span>CASA · PARQUE · PLAYA</span><i>+</i>
-        <span>PETG</span><i>+</i><span>RESISTENTE A UV</span><i>+</i><span>MANIJA REGULABLE</span><i>+</i><span>YERBERO DESPOLVILLADOR</span><i>+</i><span>BASE ANTIDESLIZANTE</span><i>+</i><span>CASA · PARQUE · PLAYA</span><i>+</i>
+        <span>Resistente a UV</span><i>✦</i><span class="it">manija regulable</span><i>✦</i><span>Yerbero despolvillador</span><i>✦</i><span class="it">base antideslizante</span><i>✦</i><span>Casa, parque y playa</span><i>✦</i>
+        <span>Resistente a UV</span><i>✦</i><span class="it">manija regulable</span><i>✦</i><span>Yerbero despolvillador</span><i>✦</i><span class="it">base antideslizante</span><i>✦</i><span>Casa, parque y playa</span><i>✦</i>
       </div>
     </div>
 
     <!-- ============ EDICIONES ============ -->
     <section class="section" id="ediciones">
       <header class="sec-head">
-        <p class="idx" data-scramble>[01] — EDICIONES</p>
+        <p class="label"><b>01</b>Ediciones</p>
         <h2 class="title lines" aria-label="Elegí tu edición.">
           <span class="ln sm"><span>elegí tu</span></span>
           <span class="ln fit" style="--n:8"><span>EDICIÓN.</span></span>
         </h2>
       </header>
 
-      <div class="eds">
-        <article class="ed-card reveal" style="--c1:#A9BDF0;--c2:#DDF27A">
-          <div class="ed-top"><span class="mono">ED.01</span><span class="swatches"><i style="--c:#A9BDF0"></i><i style="--c:#8C9099"></i></span></div>
+      <div class="eds" id="eds">
+        <article class="ed-card" style="--c1:#A9BDF0;--c2:#DDF27A">
+          <div class="ed-top"><span>Edición 01</span><span class="swatches"><i style="--c:#A9BDF0"></i><i style="--c:#8C9099"></i></span></div>
           <div class="gallery">
             <div class="frame g-main">
               <img src="assets/producto-estudio.jpg" alt="Edición Clásica, vista frontal" loading="lazy">
@@ -119,12 +134,12 @@
             <h3>Clásica</h3>
             <p>Lavanda y gris. La original, para el parque, la playa o la ruta.</p>
             <ul class="tags"><li>Lavanda</li><li>Gris</li><li>Yerbero incluido</li></ul>
-            <a class="btn btn-ed" data-wa="clasica" href="#">Pedir edición Clásica</a>
+            <a class="btn btn-ed" data-wa="clasica" href="#">Pedir la Clásica</a>
           </div>
         </article>
 
-        <article class="ed-card reveal" style="--c1:#2F62F0;--c2:#FFD21F">
-          <div class="ed-top"><span class="mono">ED.02</span><span class="badge-new">NUEVA</span><span class="swatches"><i style="--c:#2F62F0"></i><i style="--c:#FFD21F"></i></span></div>
+        <article class="ed-card" style="--c1:#2F62F0;--c2:#FFD21F">
+          <div class="ed-top"><span>Edición 02</span><span class="badge-new">Nueva</span><span class="swatches"><i style="--c:#2F62F0"></i><i style="--c:#FFD21F"></i></span></div>
           <div class="gallery">
             <div class="frame g-main">
               <img src="assets/boca-termo.jpg" alt="Edición Boca, vista frontal con termo" loading="lazy">
@@ -141,26 +156,27 @@
             <h3>Boca · La Mitad +1</h3>
             <p>Azul y oro, escudo en relieve y yerbero a juego. Tu equipo, siempre con vos.</p>
             <ul class="tags"><li>Azul</li><li>Amarillo</li><li>Escudo en relieve</li></ul>
-            <a class="btn btn-ed" data-wa="boca" href="#">Pedir edición Boca</a>
+            <a class="btn btn-ed" data-wa="boca" href="#">Pedir la de Boca</a>
           </div>
         </article>
 
-        <article class="ed-card ed-custom reveal">
-          <div class="ed-top"><span class="mono">ED.XX</span><span class="swatches"><i style="--c:#E4002B"></i><i style="--c:#FFFFFF"></i><i style="--c:#16181D"></i></span></div>
+        <article class="ed-card ed-custom">
+          <div class="ed-top"><span>A pedido</span><span class="swatches"><i style="--c:#E4002B"></i><i style="--c:#FFFFFF"></i><i style="--c:#16181D"></i></span></div>
           <div class="custom-body">
             <span class="plus" aria-hidden="true">+</span>
             <h3>¿Sos de otro club?</h3>
-            <p>La personalizamos con los colores de tu equipo. Escribinos y la diseñamos con vos.</p>
+            <p>La hacemos con los colores de tu equipo. Escribinos y la diseñamos con vos.</p>
             <a class="btn btn-line" data-wa="equipo" href="#">Consultar por mi equipo</a>
           </div>
         </article>
       </div>
+      <div class="dots" id="edsDots" aria-hidden="true"><span class="is-active"></span><span></span><span></span></div>
     </section>
 
     <!-- ============ ANATOMÍA ============ -->
     <section class="section anatomy" id="anatomia">
       <header class="sec-head">
-        <p class="idx" data-scramble>[02] — ANATOMÍA</p>
+        <p class="label"><b>02</b>Anatomía</p>
         <h2 class="title lines" aria-label="Todo en su lugar.">
           <span class="ln sm"><span>todo en</span></span>
           <span class="ln fit" style="--n:9"><span>SU <em class="hl">LUGAR.</em></span></span>
@@ -172,21 +188,21 @@
           <img class="ed-img is-active" data-ed="clasica" src="assets/producto-estudio.jpg" alt="Partes de la matera, edición Clásica" loading="lazy">
           <img class="ed-img" data-ed="boca" src="assets/boca-termo.jpg" alt="Partes de la matera, edición Boca" loading="lazy">
           <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
-          <button class="hs" data-i="0" data-clasica="50,7"  data-boca="50,6"  aria-label="Manija">01</button>
-          <button class="hs" data-i="1" data-clasica="52,38" data-boca="52,40" aria-label="Termo">02</button>
-          <button class="hs" data-i="2" data-clasica="21,62" data-boca="18,68" aria-label="Yerbero">03</button>
-          <button class="hs" data-i="3" data-clasica="82,62" data-boca="82,61" aria-label="Mate">04</button>
-          <button class="hs" data-i="4" data-clasica="45,80" data-boca="40,76" aria-label="Cuerpo">05</button>
-          <button class="hs" data-i="5" data-clasica="62,91" data-boca="56,93" aria-label="Base">06</button>
+          <button class="hs" data-i="0" data-clasica="50,7"  data-boca="50,6"  aria-label="Manija">1</button>
+          <button class="hs" data-i="1" data-clasica="52,38" data-boca="52,40" aria-label="Termo">2</button>
+          <button class="hs" data-i="2" data-clasica="21,62" data-boca="18,68" aria-label="Yerbero">3</button>
+          <button class="hs" data-i="3" data-clasica="82,62" data-boca="82,61" aria-label="Mate">4</button>
+          <button class="hs" data-i="4" data-clasica="45,80" data-boca="40,76" aria-label="Cuerpo">5</button>
+          <button class="hs" data-i="5" data-clasica="62,91" data-boca="56,93" aria-label="Base">6</button>
         </div>
 
         <ol class="parts">
-          <li><button data-i="0"><span class="pn">01</span><span><b>Manija regulable</b><small>Cambia de altura según el termo y se traba con un botón.</small></span></button></li>
-          <li><button data-i="1"><span class="pn">02</span><span><b>Termo al centro</b><small>Alojamiento central, firme y siempre a mano.</small></span></button></li>
-          <li><button data-i="2"><span class="pn">03</span><span><b>Yerbero incluido</b><small>Con tapa y función despolvilladora.</small></span></button></li>
-          <li><button data-i="3"><span class="pn">04</span><span><b>Porta mate</b><small>Un lugar propio para el mate.</small></span></button></li>
-          <li><button data-i="4"><span class="pn">05</span><span><b>Cuerpo personalizable</b><small>Con los colores y el escudo de tu equipo o tu marca.</small></span></button></li>
-          <li><button data-i="5"><span class="pn">06</span><span><b>Base con goma</b><small>Más apoyo y estabilidad en cualquier superficie.</small></span></button></li>
+          <li><button data-i="0"><span class="pn">1</span><span><b>Manija regulable</b><small>Cambia de altura según el termo y se traba con un botón.</small></span></button></li>
+          <li><button data-i="1"><span class="pn">2</span><span><b>Termo al centro</b><small>Alojamiento central, firme y siempre a mano.</small></span></button></li>
+          <li><button data-i="2"><span class="pn">3</span><span><b>Yerbero incluido</b><small>Con tapa y función despolvilladora.</small></span></button></li>
+          <li><button data-i="3"><span class="pn">4</span><span><b>Porta mate</b><small>Un lugar propio para el mate.</small></span></button></li>
+          <li><button data-i="4"><span class="pn">5</span><span><b>Cuerpo personalizable</b><small>Con los colores y el escudo de tu equipo o tu marca.</small></span></button></li>
+          <li><button data-i="5"><span class="pn">6</span><span><b>Base con goma</b><small>Más apoyo y estabilidad en cualquier superficie.</small></span></button></li>
         </ol>
       </div>
     </section>
@@ -194,7 +210,7 @@
     <!-- ============ DETALLES (tarjetas apiladas) ============ -->
     <section class="section details" id="detalles">
       <header class="sec-head">
-        <p class="idx" data-scramble>[03] — DETALLES</p>
+        <p class="label"><b>03</b>Detalles</p>
         <h2 class="title lines" aria-label="Detalles que se notan.">
           <span class="ln sm"><span>detalles que</span></span>
           <span class="ln fit" style="--n:9"><span>SE <em class="hl">NOTAN.</em></span></span>
@@ -203,7 +219,7 @@
 
       <div class="stack">
         <article class="scard" style="--i:0">
-          <div class="scard-head"><span>DET—01 · MANIJA</span><span>01/05</span></div>
+          <div class="scard-head"><span><b>01</b> Manija</span><span>1 / 5</span></div>
           <div class="scard-img"><img src="assets/boca-manija.jpg" alt="Manija con agujeros de traba y botón" loading="lazy"></div>
           <div class="scard-body">
             <h3 class="title" aria-label="Ajustá. Llevá.">
@@ -211,12 +227,12 @@
               <span class="ln fit" style="--n:7"><span>LLEVÁ.</span></span>
             </h3>
             <p>La manija <strong>cambia de altura</strong> para adaptarse a distintos termos.</p>
-            <dl class="mini"><div><dt>ALTURA</dt><dd>Regulable</dd></div><div><dt>TRABA</dt><dd>Botón</dd></div></dl>
+            <dl class="mini"><div><dt>Altura</dt><dd>Regulable</dd></div><div><dt>Traba</dt><dd>Con botón</dd></div></dl>
           </div>
         </article>
 
         <article class="scard" style="--i:1">
-          <div class="scard-head"><span>DET—02 · YERBERO</span><span>02/05</span></div>
+          <div class="scard-head"><span><b>02</b> Yerbero</span><span>2 / 5</span></div>
           <div class="scard-img"><img src="assets/yerbero-abierto.jpg" alt="Yerbero abierto con la tapa despolvilladora perforada" loading="lazy"></div>
           <div class="scard-body">
             <h3 class="title" aria-label="Yerba sin polvo.">
@@ -224,12 +240,12 @@
               <span class="ln sm"><span>sin <em class="hl">polvo.</em></span></span>
             </h3>
             <p>Yerbero incluido con <strong>tapa despolvilladora</strong>: la yerba ordenada y lista para cebar.</p>
-            <dl class="mini"><div><dt>TAPA</dt><dd>Despolvilladora</dd></div><div><dt>INCLUIDO</dt><dd>Sí</dd></div></dl>
+            <dl class="mini"><div><dt>Tapa</dt><dd>Despolvilladora</dd></div><div><dt>Incluido</dt><dd>Sí</dd></div></dl>
           </div>
         </article>
 
         <article class="scard" style="--i:2">
-          <div class="scard-head"><span>DET—03 · BOLSILLO</span><span>03/05</span></div>
+          <div class="scard-head"><span><b>03</b> Bolsillo</span><span>3 / 5</span></div>
           <div class="scard-img"><img src="assets/boca-escudo.jpg" alt="Frente con escudo en relieve y bolsillo" loading="lazy"></div>
           <div class="scard-body">
             <h3 class="title" aria-label="El celu, también.">
@@ -237,12 +253,12 @@
               <span class="ln fit" style="--n:8"><span>TAMBIÉN.</span></span>
             </h3>
             <p>Un <strong>bolsillo</strong> para que el teléfono viaje parado y no ande dando vueltas.</p>
-            <dl class="mini"><div><dt>USO</dt><dd>Celular</dd></div><div><dt>POSICIÓN</dt><dd>Frontal</dd></div></dl>
+            <dl class="mini"><div><dt>Uso</dt><dd>Celular</dd></div><div><dt>Posición</dt><dd>Frontal</dd></div></dl>
           </div>
         </article>
 
         <article class="scard" style="--i:3">
-          <div class="scard-head"><span>DET—04 · BASE</span><span>04/05</span></div>
+          <div class="scard-head"><span><b>04</b> Base</span><span>4 / 5</span></div>
           <div class="scard-img"><img src="assets/base-goma.jpg" alt="Base con zona de goma antideslizante" loading="lazy"></div>
           <div class="scard-body">
             <h3 class="title" aria-label="Más agarre. Más confort.">
@@ -251,12 +267,12 @@
               <span class="ln sm"><span>más <em class="hl">confort.</em></span></span>
             </h3>
             <p>La base incorpora una <strong>zona de goma</strong> que mejora el apoyo y la estabilidad.</p>
-            <dl class="mini"><div><dt>APOYO</dt><dd>Antideslizante</dd></div><div><dt>SUPERFICIE</dt><dd>Mesa · pasto · auto</dd></div></dl>
+            <dl class="mini"><div><dt>Apoyo</dt><dd>Antideslizante</dd></div><div><dt>Dónde</dt><dd>Mesa, pasto, auto</dd></div></dl>
           </div>
         </article>
 
         <article class="scard" style="--i:4">
-          <div class="scard-head"><span>DET—05 · MATERIAL</span><span>05/05</span></div>
+          <div class="scard-head"><span><b>05</b> Material</span><span>5 / 5</span></div>
           <div class="scard-img"><img src="assets/detalle-manija.jpg" alt="Textura del material impreso" loading="lazy"></div>
           <div class="scard-body">
             <h3 class="title" aria-label="Hecha para todos los días.">
@@ -265,7 +281,7 @@
               <span class="ln sm"><span>los <em class="hl">días.</em></span></span>
             </h3>
             <p>PETG <strong>resistente a rayos UV</strong>, para uso cotidiano adentro y afuera.</p>
-            <dl class="mini"><div><dt>MATERIAL</dt><dd>PETG</dd></div><div><dt>UV</dt><dd>Resistente</dd></div></dl>
+            <dl class="mini"><div><dt>Material</dt><dd>PETG</dd></div><div><dt>Rayos UV</dt><dd>Resistente</dd></div></dl>
           </div>
         </article>
       </div>
@@ -274,7 +290,7 @@
     <!-- ============ USO ============ -->
     <section class="section places">
       <header class="sec-head">
-        <p class="idx" data-scramble>[04] — USO</p>
+        <p class="label"><b>04</b>Uso</p>
         <h2 class="title lines" aria-label="Interior y exterior.">
           <span class="ln sm"><span>interior y</span></span>
           <span class="ln fit" style="--n:9"><span>EXTERIOR.</span></span>
@@ -283,45 +299,45 @@
       <div class="cards" id="cards">
         <figure class="card" data-tilt>
           <img src="assets/lifestyle-parque.jpg" alt="Matera en el pasto de un parque" loading="lazy">
-          <figcaption><span>LOC.01</span>Parque</figcaption>
+          <figcaption>Parque<span>01</span></figcaption>
         </figure>
         <figure class="card" data-tilt>
           <img src="assets/lifestyle-auto.jpg" alt="Matera apoyada en el piso de un auto" loading="lazy">
-          <figcaption><span>LOC.02</span>Ruta</figcaption>
+          <figcaption>Ruta<span>02</span></figcaption>
         </figure>
         <figure class="card" data-tilt>
           <img src="assets/lifestyle-mano.jpg" alt="Persona llevando la matera por la manija" loading="lazy">
-          <figcaption><span>LOC.03</span>De la mano</figcaption>
+          <figcaption>De la mano<span>03</span></figcaption>
         </figure>
       </div>
-      <div class="cards-dots" aria-hidden="true"><span class="is-active"></span><span></span><span></span></div>
+      <div class="dots" id="cardsDots" aria-hidden="true"><span class="is-active"></span><span></span><span></span></div>
     </section>
 
     <!-- ============ FICHA TÉCNICA ============ -->
     <section class="section spec" id="ficha">
       <header class="sec-head">
-        <p class="idx" data-scramble>[05] — FICHA TÉCNICA</p>
+        <p class="label"><b>05</b>Ficha técnica</p>
         <h2 class="title lines" aria-label="Ficha técnica.">
           <span class="ln sm"><span>ficha</span></span>
           <span class="ln fit" style="--n:8"><span>TÉCNICA.</span></span>
         </h2>
       </header>
       <dl class="spec-table">
-        <div class="reveal"><dt>MATERIAL</dt><dd data-scramble>PETG · RESISTENTE A UV</dd></div>
-        <div class="reveal"><dt>USO</dt><dd data-scramble>INTERIOR Y EXTERIOR</dd></div>
-        <div class="reveal"><dt>MANIJA</dt><dd data-scramble>REGULABLE EN ALTURA · TRABA CON BOTÓN</dd></div>
-        <div class="reveal"><dt>YERBERO</dt><dd data-scramble>INCLUIDO · TAPA DESPOLVILLADORA</dd></div>
-        <div class="reveal"><dt>COMPARTIMENTOS</dt><dd data-scramble>TERMO · MATE · YERBERO · CELULAR</dd></div>
-        <div class="reveal"><dt>BASE</dt><dd data-scramble>ZONA DE GOMA ANTIDESLIZANTE</dd></div>
-        <div class="reveal"><dt>EDICIONES</dt><dd data-scramble>CLÁSICA · BOCA · A PEDIDO</dd></div>
-        <div class="reveal"><dt>CUIDADO</dt><dd data-scramble>NO DEJAR EN AUTO CERRADO AL SOL</dd></div>
+        <div class="reveal"><dt>Material</dt><dd>PETG resistente a UV</dd></div>
+        <div class="reveal"><dt>Uso</dt><dd>Interior y exterior</dd></div>
+        <div class="reveal"><dt>Manija</dt><dd>Regulable en altura, con traba</dd></div>
+        <div class="reveal"><dt>Yerbero</dt><dd>Incluido, con tapa despolvilladora</dd></div>
+        <div class="reveal"><dt>Lugar para</dt><dd>Termo, mate, yerbero y celular</dd></div>
+        <div class="reveal"><dt>Base</dt><dd>Zona de goma antideslizante</dd></div>
+        <div class="reveal"><dt>Ediciones</dt><dd>Clásica, Boca y a pedido</dd></div>
+        <div class="reveal"><dt>Cuidado</dt><dd>No dejar en auto cerrado al sol</dd></div>
       </dl>
     </section>
 
     <!-- ============ PERSONALIZÁ ============ -->
     <section class="section custom" id="personaliza">
       <header class="sec-head">
-        <p class="idx" data-scramble>[06] — PERSONALIZACIÓN</p>
+        <p class="label"><b>06</b>Personalización</p>
         <h2 class="title lines" aria-label="Tu equipo, tu marca.">
           <span class="ln sm"><span>tu equipo,</span></span>
           <span class="ln fit acc2" style="--n:9"><span>TU MARCA.</span></span>
@@ -331,7 +347,7 @@
         <article class="cust-card reveal">
           <div class="frame"><img src="assets/boca-yerbero.jpg" alt="Yerbero con escudo en relieve" loading="lazy"><span class="corner tl"></span><span class="corner br"></span></div>
           <div class="cust-body">
-            <span class="mono">OPC.A — CLUBES</span>
+            <span class="kicker">Para clubes</span>
             <h3>Los colores de tu equipo</h3>
             <p>Cuerpo, base y yerbero en los colores de tu club, con escudo en relieve.</p>
             <a class="btn btn-acc" data-wa="equipo" href="#">Quiero la de mi equipo</a>
@@ -340,7 +356,7 @@
         <article class="cust-card reveal">
           <div class="frame"><img src="assets/base-goma.jpg" alt="Logo grabado en la base de la matera" loading="lazy"><span class="corner tl"></span><span class="corner br"></span><span class="brand-tag">Tu logo acá ↗</span></div>
           <div class="cust-body">
-            <span class="mono">OPC.B — EMPRESAS</span>
+            <span class="kicker">Para empresas</span>
             <h3>Regalos empresariales</h3>
             <p>Con el logo de tu empresa. Un regalo que se usa todos los días y no termina en un cajón.</p>
             <a class="btn btn-line" data-wa="empresas" href="#">Cotizar para mi empresa</a>
@@ -352,22 +368,22 @@
     <!-- ============ CÓMO COMPRAR ============ -->
     <section class="section buy" id="comprar">
       <header class="sec-head">
-        <p class="idx" data-scramble>[07] — CÓMO COMPRAR</p>
+        <p class="label"><b>07</b>Cómo comprar</p>
         <h2 class="title lines" aria-label="Cómo comprar.">
           <span class="ln sm"><span>cómo</span></span>
           <span class="ln fit" style="--n:8"><span>COMPRAR.</span></span>
         </h2>
       </header>
       <ol class="steps">
-        <li class="reveal"><span class="pn">01</span><div><h3>Elegí tu edición</h3><p>Clásica, Boca o la de tu equipo.</p></div></li>
-        <li class="reveal"><span class="pn">02</span><div><h3>Escribinos</h3><p>Te llega un WhatsApp con el pedido armado.</p></div></li>
-        <li class="reveal"><span class="pn">03</span><div><h3>Pagá como quieras</h3><p>Transferencia o Mercado Pago.</p></div></li>
-        <li class="reveal"><span class="pn">04</span><div><h3>Recibila</h3><p>Coordinamos envío o retiro.</p></div></li>
+        <li class="reveal"><span class="pn">1</span><div><h3>Elegí tu edición</h3><p>Clásica, Boca o la de tu equipo.</p></div></li>
+        <li class="reveal"><span class="pn">2</span><div><h3>Escribinos</h3><p>Te llega un WhatsApp con el pedido armado.</p></div></li>
+        <li class="reveal"><span class="pn">3</span><div><h3>Pagá como quieras</h3><p>Transferencia o Mercado Pago.</p></div></li>
+        <li class="reveal"><span class="pn">4</span><div><h3>Recibila</h3><p>Coordinamos envío o retiro.</p></div></li>
       </ol>
       <div class="buy-cta reveal">
         <div>
-          <p class="mono">PEDIDO ACTUAL</p>
-          <p class="buy-ed" data-ed-name>EDICIÓN CLÁSICA</p>
+          <p class="kicker">Tu pedido</p>
+          <p class="buy-ed" data-ed-name>Edición Clásica</p>
           <p class="buy-price" data-price></p>
         </div>
         <div class="buy-btns">
@@ -383,7 +399,7 @@
     <!-- ============ FAQ ============ -->
     <section class="section faq">
       <header class="sec-head">
-        <p class="idx" data-scramble>[08] — PREGUNTAS</p>
+        <p class="label"><b>08</b>Preguntas</p>
         <h2 class="title lines" aria-label="Preguntas frecuentes.">
           <span class="ln sm"><span>preguntas</span></span>
           <span class="ln fit" style="--n:11"><span>FRECUENTES.</span></span>
@@ -422,12 +438,12 @@
 
   <footer class="footer">
     <div class="footer-inner">
-      <span class="logo">PRINTAGGI</span>
+      <span class="logo">Printaggi</span>
+      <p class="footer-tag">Matera Premium. <em>Tu equipo, siempre con vos.</em></p>
       <nav class="footer-links">
         <a data-wa="ed" href="#">WhatsApp</a>
         <a data-ig href="#" target="_blank" rel="noopener">Instagram</a>
       </nav>
-      <span class="mono">MATERA PREMIUM · TU EQUIPO, SIEMPRE CON VOS</span>
     </div>
   </footer>
 
@@ -449,9 +465,9 @@
   </a>
 
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-    <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.02c-.24.68-1.42 1.31-1.95 1.36-.5.05-.97.23-3.27-.68-2.77-1.09-4.52-3.92-4.66-4.1-.13-.18-1.11-1.48-1.11-2.82s.7-2 .95-2.28c.25-.27.54-.34.72-.34h.52c.17 0 .39-.06.61.47.24.56.79 1.93.86 2.07.07.14.11.3.02.48-.09.18-.14.3-.27.46-.14.16-.29.36-.41.48-.14.14-.28.29-.12.56.16.27.71 1.17 1.52 1.9 1.05.93 1.93 1.22 2.2 1.36.27.14.43.11.59-.07.16-.18.68-.79.86-1.07.18-.27.36-.23.61-.14.25.09 1.59.75 1.86.89.27.14.45.2.52.32.06.11.06.67-.18 1.35z"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.450 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.02c-.24.68-1.42 1.31-1.95 1.36-.5.05-.97.23-3.27-.68-2.77-1.09-4.52-3.92-4.66-4.1-.13-.18-1.11-1.48-1.11-2.82s.7-2 .95-2.28c.25-.27.54-.34.72-.34h.52c.17 0 .39-.06.61.47.24.56.79 1.93.86 2.07.07.14.11.3.02.48-.09.18-.14.3-.27.46-.14.16-.29.36-.41.48-.14.14-.28.29-.12.56.16.27.71 1.17 1.52 1.9 1.05.93 1.93 1.22 2.2 1.36.27.14.43.11.59-.07.16-.18.68-.79.86-1.07.18-.27.36-.23.61-.14.25.09 1.59.75 1.86.89.27.14.45.2.52.32.06.11.06.67-.18 1.35z"/></symbol>
   </svg>
 
-  <script src="script.js?v=4"></script>
+  <script src="script.js?v=5"></script>
 </body>
 </html>

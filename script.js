@@ -60,7 +60,7 @@ function setEdition(ed, animate = true) {
   try { localStorage.setItem("printaggi-ed", ed); } catch (e) {}
   const info = CONFIG.ediciones[ed];
   document.querySelectorAll("[data-set-ed]").forEach(b => b.setAttribute("aria-checked", b.dataset.setEd === ed));
-  document.querySelectorAll("[data-ed-name]").forEach(el => { el.textContent = info.nombre.toUpperCase(); });
+  document.querySelectorAll("[data-ed-name]").forEach(el => { el.textContent = info.nombre; });
   document.querySelectorAll("[data-ed-short]").forEach(el => { el.textContent = info.corto; });
   document.querySelectorAll("[data-wa]").forEach(a => {
     a.href = waLink(a.dataset.wa === "ed" ? ed : a.dataset.wa);
@@ -77,9 +77,14 @@ function fitTitles() {
     const cs = getComputedStyle(f);
     const fill = parseFloat(cs.getPropertyValue("--fill")) || 0.98;
     const max = parseFloat(cs.getPropertyValue("--max")) || 180;
-    f.style.fontSize = "100px";
-    const size = 100 * f.closest(".title").clientWidth * fill / word.offsetWidth;
-    f.style.fontSize = `${Math.min(size, max).toFixed(1)}px`;
+    const target = f.closest(".title").clientWidth * fill;
+    // la fuente cambia de forma según el tamaño (tamaño óptico), así que medimos y corregimos 3 veces
+    let size = 100;
+    for (let k = 0; k < 3; k++) {
+      f.style.fontSize = `${size}px`;
+      size = Math.min(size * target / word.offsetWidth, max);
+    }
+    f.style.fontSize = `${size.toFixed(1)}px`;
   });
 }
 fitTitles();
@@ -89,30 +94,11 @@ addEventListener("resize", () => { clearTimeout(fitTimer); fitTimer = setTimeout
 
 document.querySelectorAll(".title").forEach(t => t.querySelectorAll(".ln").forEach((ln, k) => ln.style.setProperty("--k", k)));
 
-/* ============ Texto que se "decodifica" (etiquetas técnicas) ============ */
-const GLYPHS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#/+—";
-function scramble(el) {
-  const final = el.dataset.final || (el.dataset.final = el.textContent);
-  if (reduce) return;
-  const start = performance.now(), dur = 700;
-  const tick = now => {
-    const p = Math.min((now - start) / dur, 1);
-    el.textContent = p >= 1 ? final : [...final].map((ch, i) =>
-      ch === " " || i / final.length < p ? ch : GLYPHS[Math.floor(Math.random() * GLYPHS.length)]
-    ).join("");
-    if (p < 1) requestAnimationFrame(tick);
-  };
-  requestAnimationFrame(tick);
-  setTimeout(() => { el.textContent = final; }, dur + 400); // por si el navegador frena los cuadros
-}
-
 /* ============ Reveal on scroll ============ */
 const io = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (!e.isIntersecting) return;
     e.target.classList.add("is-in");
-    if (e.target.hasAttribute("data-scramble")) scramble(e.target);
-    e.target.querySelectorAll?.("[data-scramble]").forEach(scramble);
     io.unobserve(e.target);
   });
 }, { threshold: 0.2, rootMargin: "0px 0px -40px 0px" });
@@ -122,22 +108,26 @@ document.querySelectorAll(".reveal").forEach(el => {
   el.style.setProperty("--d", `${sib.indexOf(el) * 0.07}s`);
   io.observe(el);
 });
-document.querySelectorAll(".title, .idx, .frame-cap [data-scramble]").forEach(el => io.observe(el));
+document.querySelectorAll(".title").forEach(el => io.observe(el));
 
-/* ============ Hero: cotas y mira que siguen al mouse ============ */
-const heroFrame = document.getElementById("heroFrame");
-const coords = document.getElementById("coords");
-if (canHover && !reduce) {
-  heroFrame.addEventListener("pointermove", e => {
-    const r = heroFrame.getBoundingClientRect();
-    const x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
-    heroFrame.style.setProperty("--cx", `${x * 100}%`);
-    heroFrame.style.setProperty("--cy", `${y * 100}%`);
-    coords.textContent = `X ${x.toFixed(3)} · Y ${y.toFixed(3)}`;
-    heroFrame.classList.add("is-tracking");
-  });
-  heroFrame.addEventListener("pointerleave", () => heroFrame.classList.remove("is-tracking"));
+/* ============ Menú (celu) ============ */
+const menu = document.getElementById("menu");
+const menuBtn = document.getElementById("menuBtn");
+function toggleMenu(open) {
+  menuBtn.setAttribute("aria-expanded", open);
+  menuBtn.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
+  document.body.classList.toggle("menu-open", open);
+  if (open) {
+    menu.hidden = false;
+    requestAnimationFrame(() => menu.classList.add("is-open"));
+  } else {
+    menu.classList.remove("is-open");
+    setTimeout(() => { if (!menu.classList.contains("is-open")) menu.hidden = true; }, 350);
+  }
 }
+menuBtn.addEventListener("click", () => toggleMenu(menuBtn.getAttribute("aria-expanded") !== "true"));
+menu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => toggleMenu(false)));
+addEventListener("keydown", e => { if (e.key === "Escape" && !menu.hidden) toggleMenu(false); });
 
 /* ============ Anatomía: puntos ↔ lista ============ */
 const hs = [...document.querySelectorAll(".hs")];
@@ -172,9 +162,22 @@ document.querySelectorAll(".gallery").forEach(g => {
   g.querySelectorAll(".thumbs button").forEach(b => b.addEventListener("click", () => {
     g.querySelectorAll(".thumbs button").forEach(o => o.classList.toggle("is-on", o === b));
     main.classList.add("is-fading");
-    setTimeout(() => { main.src = b.dataset.src; main.classList.remove("is-fading"); }, 220);
+    setTimeout(() => { main.src = b.dataset.src; main.classList.remove("is-fading"); }, 200);
   }));
 });
+
+/* ============ Carruseles: puntitos ============ */
+function syncDots(track, dots) {
+  if (!track || !dots) return;
+  const spans = dots.querySelectorAll("span");
+  track.addEventListener("scroll", () => {
+    const step = track.firstElementChild.getBoundingClientRect().width + 12;
+    const i = Math.min(Math.round(track.scrollLeft / step), spans.length - 1);
+    spans.forEach((d, k) => d.classList.toggle("is-active", k === i));
+  }, { passive: true });
+}
+syncDots(document.getElementById("eds"), document.getElementById("edsDots"));
+syncDots(document.getElementById("cards"), document.getElementById("cardsDots"));
 
 /* ============ Scroll: nav, barra de compra, tarjetas apiladas ============ */
 const nav = document.getElementById("nav");
@@ -188,7 +191,7 @@ let lastY = 0, ticking = false;
 function onScroll() {
   const y = scrollY;
   nav.classList.toggle("is-scrolled", y > 20);
-  nav.classList.toggle("is-hidden", y > 400 && y > lastY + 2);
+  nav.classList.toggle("is-hidden", y > 400 && y > lastY + 2 && menu.hidden);
   lastY = y;
 
   const pastHero = heroCtas.getBoundingClientRect().bottom < 0;
@@ -221,14 +224,6 @@ if (canHover && !reduce) {
     el.addEventListener("pointerleave", () => { el.style.setProperty("--ry", "0deg"); el.style.setProperty("--rx", "0deg"); });
   });
 }
-
-/* ============ Carrusel de usos: puntitos ============ */
-const cards = document.getElementById("cards");
-const cardDots = document.querySelectorAll(".cards-dots span");
-cards.addEventListener("scroll", () => {
-  const i = Math.round(cards.scrollLeft / cards.firstElementChild.getBoundingClientRect().width);
-  cardDots.forEach((d, k) => d.classList.toggle("is-active", k === i));
-}, { passive: true });
 
 /* ============ FAQ: uno abierto a la vez ============ */
 const faqs = document.querySelectorAll(".faq-list details");
