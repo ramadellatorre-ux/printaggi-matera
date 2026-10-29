@@ -2,18 +2,19 @@
 
 ## Stack
 - HTML + CSS + JS puro, sin dependencias (solo Google Fonts)
-- Tipografías: Archivo (títulos) + DM Sans (texto)
-- Paleta: azul marino `#1E2638`, lavanda `#DFE4FC`, periwinkle `#A9BDF0`, lima `#DDF27A`
+- Estética técnica oscura; el acento cambia por edición (Clásica: lavanda/lima · Boca: azul/oro)
+- Tipografías: Archivo, DM Sans y JetBrains Mono (etiquetas técnicas)
 
 ## Configurar (todo en `script.js`, objeto `CONFIG`)
 - `whatsapp`: número con código de país, sin `+` (ej: `5491123456789`)
 - `precio`: ej `"$ 45.000"`. Vacío → muestra "Consultá el precio por WhatsApp"
 - `mpLink`: link de pago de Mercado Pago. Vacío → el botón no aparece
-- `mensajes`: textos que llegan pre-cargados al WhatsApp
+- `instagram`: usuario sin @
+- `ediciones` / `mensajes`: nombre de cada edición y el texto que llega al WhatsApp (clasica, boca, equipo, empresas)
+- Al cambiar CSS/JS, subí el `?v=` en index.html para que los celulares no usen la versión vieja
 
 ## Pendiente de confirmar (buscar `EDITAR` en index.html)
-- Si el bolsillo para celular viene en el modelo que se vende
-- Qué incluye la matera (FAQ)
+- Si termo y mate van incluidos (FAQ «¿Qué incluye?»)
 
 ## Correr local
 ```bash
